@@ -48,8 +48,9 @@ eb --robot gompi-2020a.eb
 
 # install gomkl (intel math kernel library)
 eb --robot      gomkl-2020a.eb
-eb --robot -f imkl-2020.1.217-gompi-2020a.eb
 
 # install R-4.0.0
 eb --robot R-4.0.0-foss-2020a.eb
 
+# try the gomkl-2020a toolchain 
+eb --robot --try-toolchain=gomkl,2020a R-4.0.0-foss-2020a.eb
