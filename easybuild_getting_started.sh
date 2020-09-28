@@ -3,7 +3,7 @@
 sudo dnf install -y Lmod
 
 # install some system dependencies
-sudo dnf install -y rdma-core-devel libibverbs-utils
+sudo dnf install -y rdma-core-devel libibverbs-utils pam-devel
 
 # download easybuild bootstrap file
 wget https://raw.githubusercontent.com/easybuilders/easybuild-framework/develop/easybuild/scripts/bootstrap_eb.py
@@ -36,21 +36,36 @@ eb --confighelp >> ~/.config/easybuild/config.cfg
 # filter-env-vars=LD_LIBRARY_PATH
 # optarch=GENERIC
 # rpath=True
+# use-ccache=$HOME/.local/share/ccache
+
+# search for ccache
+eb -S ccache
+
+# dry run and install ccache
+eb -Dr ccache/3.7.11.eb
+eb -r ccache/3.7.11.eb
+
+# set CCACHE_DIR
+echo "export CC='ccache gcc'" >> $HOME/.bash_profile
 
 # search for R-4.0.0
 eb -S R-4.0.0
 
 # dry run of R-4.0.0 installation
-eb R-4.0.0-foss-2020a.eb -Dr
+eb -Dr R-4.0.0-foss-2020a.eb
 
 # install gompi
-eb --robot gompi-2020a.eb
+eb -r gompi-2020a.eb
 
 # install gomkl (intel math kernel library)
-eb --robot      gomkl-2020a.eb
+eb -r gomkl-2020a.eb
 
 # install R-4.0.0
-eb --robot R-4.0.0-foss-2020a.eb
+eb -r R-4.0.0-foss-2020a.eb
+
+# install RStudio
+eb -r rstudio-1.3.959-foss-2020a-Java-11-R-4.0.0.eb
 
 # try the gomkl-2020a toolchain 
-eb --robot --try-toolchain=gomkl,2020a R-4.0.0-foss-2020a.eb
+eb -r --try-toolchain=gomkl,2020a R-4.0.0-foss-2020a.eb
+
