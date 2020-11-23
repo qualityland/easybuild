@@ -1,24 +1,30 @@
 
-# install modules system
-sudo dnf install -y Lmod
+# install environmental module system and some system dependencies
+sudo dnf install -y Lmod rdma-core-devel libibverbs-utils pam-devel
 
-# install some system dependencies
-sudo dnf install -y rdma-core-devel libibverbs-utils pam-devel
 
-# download easybuild bootstrap file
-wget https://raw.githubusercontent.com/easybuilders/easybuild-framework/develop/easybuild/scripts/bootstrap_eb.py
+## EasyBuild Installation
+
+# using pip3
+export PATH=$HOME/.local/bin:$PATH
+export EB_PYTHON=python3
+pip3 install --user easybuild
+
+
+# or using bootstrap file
+#wget https://raw.githubusercontent.com/easybuilders/easybuild-framework/develop/easybuild/scripts/bootstrap_eb.py
 
 # run it with prefix=/opt/easybuild
 python3 bootstrap_eb.py /opt/easybuild
 
 # use all modules
-module use /opt/easybuild/modules/all
+ml use /opt/easybuild/modules/all
 
 # load EasyBuild module
-module load EasyBuild
+ml EasyBuild
 
 # check loaded modules
-module list
+ml list
 
 # check available modules
 module avail
