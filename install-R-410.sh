@@ -1,5 +1,5 @@
 curl -OL https://raw.githubusercontent.com/easybuilders/easybuild-easyconfigs/develop/easybuild/easyconfigs/r/R/R-4.1.0_identify-flexiblas-in-configure.patch
-curl -OL https://raw.githubusercontent.com/easybuilders/easybuild-easyconfigs/develop/easybuild/easyconfigs/r/R/R-4.1.0-foss-2021a.eb
+#curl -OL https://raw.githubusercontent.com/easybuilders/easybuild-easyconfigs/develop/easybuild/easyconfigs/r/R/R-4.1.0-foss-2021a.eb
 curl -OL https://raw.githubusercontent.com/easybuilders/easybuild-easyconfigs/develop/easybuild/easyconfigs/x/Xvfb/Xvfb-1.20.11-GCCcore-10.3.0.eb
 curl -OL https://raw.githubusercontent.com/easybuilders/easybuild-easyconfigs/develop/easybuild/easyconfigs/t/Tk/Tk-8.6.11-GCCcore-10.3.0.eb
 curl -OL https://raw.githubusercontent.com/easybuilders/easybuild-easyconfigs/develop/easybuild/easyconfigs/i/ICU/ICU-69.1-GCCcore-10.3.0.eb

@@ -2951,11 +2951,11 @@ exts_list = [
     ('grf', '2.0.0', {
         'checksums': ['7b76de33010649bf1def4ccbd4f037148e3281408c328a2a74e1d49bc8d620ae'],
     }),
-    ('benchmarkme', '1.0.7', {
-        'checksums': ['37999b9e2df46dc274ad8aafd2b1c722d099e9680938c780defeda9d7fd7af7a'],
-    }),
     ('benchmarkmeData', '1.0.4', {
         'checksums': ['6e0768db1c783d2fa84d5214f3d8024dc9c69c7cc4d108059fa652fcd4949bd8'],
+    }),
+    ('benchmarkme', '1.0.7', {
+        'checksums': ['37999b9e2df46dc274ad8aafd2b1c722d099e9680938c780defeda9d7fd7af7a'],
     }),
 ]
 
